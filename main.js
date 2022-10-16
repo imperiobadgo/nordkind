@@ -1,0 +1,1 @@
+$(".main-content-header").attr("class", "fs-primary-heading text-accent-400 text-center fw-bold margin-bottom-700");
