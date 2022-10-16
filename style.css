@@ -225,8 +225,19 @@ p[data-width="small"] {
 
 .embedded-video {
     margin: auto;
-    width: min(var(--embedded-video-width), 80% - (var(--sm-padding)));
+    width: min(var(--embedded-video-width), 100% - (var(--sm-padding)));
     aspect-ratio: 1.7777;
+}
+
+@media (max-width: 39em) {
+    .embedded-videos-columns {
+        display: block;
+    }
+    .embedded-video {
+        padding: 1rem;
+        width: 100%;
+        aspect-ratio: 1.7777;
+    }
 }
 
 .description {
