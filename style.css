@@ -141,6 +141,10 @@ p:not([class]) {
     margin-bottom: var(--size-400);
 }
 
+p[datatype="italic"] {
+    font-style: italic;
+}
+
 p[data-width="small"] {
     max-width: 32ch;
 }
@@ -245,6 +249,19 @@ p[data-width="small"] {
     text-align: justify;
     width: min(var(--max-description-width), 100% - (var(--sm-padding) * 2));
     margin-inline: auto;
+}
+
+.contact-primary {
+    color: var(--clr-neutral-100);
+}
+
+.contact-primary a {
+    text-decoration: none;
+    color: var(--clr-neutral-100);
+}
+
+.contact-primary a:is(:hover, :focus) {
+    color: var(--clr-accent-300);
 }
 
 .footer-primary {
