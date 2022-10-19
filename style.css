@@ -1,15 +1,19 @@
 :root {
     --clr-logo: hsl(45, 96%, 50%);
-    --clr-accent-400: hsl(45, 88%, 50%);
-    --clr-accent-300: hsl(45, 88%, 75%);
-    --clr-accent-100: hsl(45, 88%, 90%);
+    --clr-header: hsl(45, 88%, 50%);
+    --clr-header-accent: hsl(45, 88%, 90%);
+    --clr-secondary-header: hsl(223, 49%, 27%);
 
-    --clr-primary-400: hsl(228, 39%, 23%);
+    --clr-primary-400: hsl(226, 53%, 19%);
 
-    --clr-background-primary: hsl(0, 95%, 0%);
+    --clr-neutral-900: hsl(0 95% 100%);
+    --clr-neutral-100: hsl(232, 12%, 13%);
+
+    --clr-accent-100: hsl(42, 100%, 58%);
+
+    --clr-background-header: hsl(0, 95%, 0%);
+    --clr-background-primary: hsl(204, 3%, 70%);
     --clr-background-footer: hsl(0, 0%, 50%);
-    --clr-neutral-900: hsl(232, 12%, 13%);
-    --clr-neutral-100: hsl(0 0% 100%);
 
     --ff-primary: "Be Vietnam Pro", sans-serif;
 
@@ -43,6 +47,9 @@
     --size-700: 3rem;
     --size-800: 4rem;
     --size-900: 5rem;
+    --size-1200: 8rem;
+    --size-1400: 10rem;
+    --size-1600: 12rem;
 
     --embedded-video-width: 560px;
     --embedded-video-height: 315px;
@@ -51,7 +58,10 @@
 
     --nav-list-height: 13rem;
     --header-size: 9rem;
+    --nav-list-height-mobile: 18rem;
+    --header-size-mobile: 14rem;
 
+    --mobile-width-change: 39em;
 }
 
 /* https://piccalil.li/blog/a-modern-css-reset */
@@ -154,11 +164,12 @@ p[data-width="small"] {
 .header {
     padding: var(--size-200);
     height: var(--nav-list-height);
-    background-image: linear-gradient(var(--clr-background-primary) 70%, transparent);
+    background-image: linear-gradient(var(--clr-background-header) 70%, transparent);
 }
 
 .sticky {
     position: fixed;
+    z-index: 5;
     width: 100%;
     /*transition: all 0.2s ease;*/
 }
@@ -169,18 +180,29 @@ p[data-width="small"] {
     width: 100%;
 }
 
+.nav-list-max-width {
+    margin: 0 auto;
+    max-width: 35rem;
+}
+
 .nav-list {
+    display: grid;
+    align-items: center;
+    align-content: center;
+    grid-template-columns: repeat(auto-fit, 6rem);
+    gap: var(--size-200);
     padding-top: var(--size-400);
     font-weight: var(--fw-semi-bold);
 }
 
 .nav-list a {
     text-decoration: none;
-    color: var(--clr-accent-400);
+    text-align: center;
+    color: var(--clr-header);
 }
 
 .nav-list a:is(:hover, :focus) {
-    color: var(--clr-accent-100);
+    color: var(--clr-header-accent);
 }
 
 /* Content */
@@ -191,6 +213,11 @@ p[data-width="small"] {
 
 .main-content-header {
     /* is replaced in the script */
+}
+
+.video-background {
+    background-image: linear-gradient(var(--clr-background-header) 95%, transparent);
+    padding-bottom: var(--size-1400);
 }
 
 .video {
@@ -212,10 +239,11 @@ p[data-width="small"] {
 }
 
 .gig-entry a:is(:hover, :focus) {
-    color: var(--clr-accent-300);
+    color: var(--clr-accent-100);
 }
 
 .embedded-videos-max-width {
+    margin: 0 auto;
     max-width: 130rem;
 }
 
@@ -234,9 +262,29 @@ p[data-width="small"] {
 }
 
 @media (max-width: 39em) {
+    .header {
+        height: var(--nav-list-height-mobile);
+    }
+
+    .content-nav-link {
+        padding-top: var(--nav-list-height-mobile);
+    }
+
+    .video {
+        margin-top: var(--header-size-mobile);
+        transform: translate(-10%, 50%) scale(2.5, 2.5);
+        transform-origin: center;
+        margin-bottom: 60%;
+    }
+
+    .video-background {
+        padding-bottom: var(--size-1600);
+    }
+
     .embedded-videos-columns {
         display: block;
     }
+
     .embedded-video {
         padding: 1rem;
         width: 100%;
@@ -261,11 +309,24 @@ p[data-width="small"] {
 }
 
 .contact-primary a:is(:hover, :focus) {
-    color: var(--clr-accent-300);
+    color: var(--clr-accent-100);
 }
 
-.footer-primary {
-    background-image: linear-gradient(transparent, var(--clr-background-footer) 30%);
+.footer-background-gradient {
+    background-image: linear-gradient(transparent, var(--clr-background-footer));
+    height: var(--size-800);
+}
+
+.impressum {
+    --max-description-width: 80rem;
+    text-align: justify;
+    width: min(var(--max-description-width), 100% - (var(--sm-padding) * 2));
+    margin-inline: auto;
+}
+.impressum-paragraph {
+    opacity: 0.8;
+
+    margin-bottom: var(--size-400);
 }
 
 /* social list */
@@ -282,8 +343,55 @@ p[data-width="small"] {
 }
 
 .social-list a:is(:hover, :focus) .social-icon {
-    --social-logo-color: var(--clr-accent-400);
+    --social-logo-color: var(--clr-header);
 }
+
+/* cookie consent */
+
+#myCookieConsent {
+    z-index: 999;
+    min-height: 20px;
+    font-family: OpenSans, arial, "sans-serif";
+    padding: 10px 20px;
+    background: rgba(0,0,0,0.6);
+    overflow: hidden;
+    position: fixed;
+    color: #FFF;
+    bottom: 0;
+    right: 0;
+    display: none;
+    left: 0;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+#myCookieConsent div {
+    padding: 5px 0 0;
+}
+#myCookieConsent a {
+    color: #ffba55;
+    display: inline-block;
+    padding: 0 10px;
+}
+#myCookieConsent a:hover {
+    color: #fda016;
+}
+#myCookieConsent a#cookieButton {
+    display: inline-block;
+    color: #000000;
+    font-size: 1.1em;
+    background: #ffba55;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 2px 20px;
+    float: right;
+    border-radius: 20px;
+}
+#myCookieConsent a#cookieButton:hover {
+    background: #fda016;
+    color: #000;
+}
+
 
 /* Utility classes */
 
@@ -323,24 +431,20 @@ p[data-width="small"] {
     justify-self: center;
 }
 
+.footer-background {
+    background-color: var(--clr-background-footer);
+}
+
 .text-center {
     text-align: center;
 }
 
-.text-primary-400 {
-    color: var(--clr-primary-400);
-}
-
-.text-accent-400 {
-    color: var(--clr-accent-400);
-}
-
 .text-accent-300 {
-    color: var(--clr-accent-300);
+    color: var(--clr-accent-100);
 }
 
-.text-accent-100 {
-    color: var(--clr-accent-100);
+.text-secondary-header {
+    color: var(--clr-secondary-header);
 }
 
 .text-neutral-100 {
@@ -349,26 +453,6 @@ p[data-width="small"] {
 
 .text-neutral-900 {
     color: var(--clr-neutral-900);
-}
-
-.bg-primary-400 {
-    background-color: var(--clr-primary-400);
-}
-
-.bg-accent-400 {
-    background-color: var(--clr-accent-400);
-}
-
-.bg-accent-100 {
-    background-color: var(--clr-accent-100);
-}
-
-.bg-neutral-100 {
-    background-color: var(--clr-neutral-100);
-}
-
-.bg-neutral-900 {
-    background-color: var(--clr-neutral-900);
 }
 
 .fw-bold {

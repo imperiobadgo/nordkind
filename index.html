@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8"/>
     <link rel="icon" type="image/svg+xml" href="assets/Nordkind_Logo.svg"/>
@@ -17,39 +17,45 @@
 <header class="header sticky">
 
     <a href="#"><img class="logo" src="assets/nordkind.svg" alt="Nordkind"></a>
-    <div class="nav-list horizontal-center-align">
-        <a class="text-neutral-100 fs-600" href="#gigs">Konzerte</a>
-        <a class="text-neutral-100 fs-600" href="#releases">Diskographie</a>
-        <a class="text-neutral-100 fs-600" href="#videos">Videos</a>
-        <a class="text-neutral-100 fs-600" href="#description">Über uns</a>
-        <a class="text-neutral-100 fs-600" href="#contact">Kontakt</a>
+    <div class="nav-list-max-width">
+        <div class="nav-list">
+            <a class="text-neutral-100 fs-600" href="#gigs">Konzerte</a>
+            <a class="text-neutral-100 fs-600" href="#releases">Diskographie</a>
+            <a class="text-neutral-100 fs-600" href="#videos">Videos</a>
+            <a class="text-neutral-100 fs-600" href="#description">Über uns</a>
+            <a class="text-neutral-100 fs-600" href="#contact">Kontakt</a>
+        </div>
     </div>
 
 </header>
 
 <main>
-    <video class="video"
-           src="assets/Nordkind_Loop.mp4" autoplay muted loop>
-    </video>
+    <div class="video-background">
+        <div class="video-container">
+            <video class="video"
+                   src="assets/Nordkind_Loop.mp4" autoplay muted loop>
+            </video>
+        </div>
+        <ul class="social-list padding-top-700 horizontal-center-align" role="list" aria-label="Social links">
+            <li><a aria-label="instagram" href="https://www.instagram.com/nordkind_band" target="_blank">
+                <img class="social-icon" src="assets/icon-instagram.svg" alt="Instagram">
+            </a>
+            </li>
+            <li><a aria-label="facebook" href="https://www.facebook.com/Nordkind-656595144782233" target="_blank">
+                <img class="social-icon" src="assets/icon-facebook.svg" alt="Facebook">
+            </a>
+            </li>
+            <li><a aria-label="youtube" href="https://www.youtube.com/channel/UCV3Azy7vjvudib6nRVkLcWw" target="_blank">
+                <img class="social-icon" src="assets/icon-youtube.svg" alt="Youtube">
+            </a>
+            </li>
+            <li><a aria-label="spotify" href="https://open.spotify.com/artist/4uszqJdbFY6VATxzfu5erA" target="_blank">
+                <img class="social-icon" src="assets/icon-spotify.svg" alt="Spotify">
+            </a>
+            </li>
+        </ul>
+    </div>
 
-    <ul class="social-list padding-top-700 horizontal-center-align" role="list" aria-label="Social links">
-        <li><a aria-label="instagram" href="https://www.instagram.com/nordkind_band">
-            <img class="social-icon" src="assets/icon-instagram.svg" alt="Instagram">
-        </a>
-        </li>
-        <li><a aria-label="facebook" href="https://www.facebook.com/Nordkind-656595144782233">
-            <img class="social-icon" src="assets/icon-facebook.svg" alt="Facebook">
-        </a>
-        </li>
-        <li><a aria-label="youtube" href="https://www.youtube.com/channel/UCV3Azy7vjvudib6nRVkLcWw">
-            <img class="social-icon" src="assets/icon-youtube.svg" alt="Youtube">
-        </a>
-        </li>
-        <li><a aria-label="spotify" href="https://open.spotify.com/artist/4uszqJdbFY6VATxzfu5erA">
-            <img class="social-icon" src="assets/icon-spotify.svg" alt="Spotify">
-        </a>
-        </li>
-    </ul>
 
     <div class="content-nav-link" id="gigs">
         <h1 class="main-content-header">
@@ -59,7 +65,7 @@
             <ul role="list" aria-label="next gigs">
                 <li class="gig-entry horizontal-center-align fs-700 padding-200">
                     20.11.2022
-                    <a href="https://polyester-klub.de"> Polyester Oldenburg</a>
+                    <a href="https://polyester-klub.de" target="_blank"> Polyester Oldenburg</a>
                 </li>
 
             </ul>
@@ -74,7 +80,7 @@
         <div class="horizontal-center-align">
             <iframe style="border: 0; width: 350px; height: 470px;"
                     src="https://bandcamp.com/EmbeddedPlayer/album=3833088212/size=large/bgcol=333333/linkcol=e99708/tracklist=false/transparent=true/"
-            ><a href="https://nordkind-eu.bandcamp.com/album/nordkind">Nordkind by Nordkind</a></iframe>
+            ><a href="https://nordkind-eu.bandcamp.com/album/nordkind" target="_blank">Nordkind by Nordkind</a></iframe>
         </div>
     </div>
 
@@ -153,12 +159,90 @@
             </a>
         </div>
     </div>
+    <!--    https://html-online.com/privacy-terms-and-conditions-->
+    <div id="myCookieConsent">
+        <a id="cookieButton">Verstanden</a>
+        <div>Diese Webseite nutzt Cookies durch das Einbinden der Inhalte von Bandcamp und Youtube. <a
+                href="https://de.wikipedia.org/wiki/HTTP-Cookie" target="_blank">Was sind Cookies?</a></div>
+    </div>
+
 
 </main>
 
-<footer class="footer-primary">
-    <div class="horizontal-center-align padding-block-900 fs-secondary-heading fw-bold text-neutral-100">
-        Nordkind 2022
+
+<footer>
+    <div class="footer-background-gradient">
+
+    </div>
+    <div class="footer-background">
+
+        <div class="horizontal-center-align padding-block-900 fs-secondary-heading fw-bold text-neutral-100">
+            Nordkind 2022
+        </div>
+        <div class="impressum | fs-800 fw-semi-bold text-neutral-100 fs-line-height-md padding-block-900">
+            <h1 class="fs-primary-heading fw-bold padding-block-700">
+                Impressum
+            </h1>
+            <p class="impressum-paragraph padding-block-700">
+                Marko Hilmert <br>
+                <br>
+                Schulstraße 7a <br>
+                26135 Oldenburg (Oldb) <br>
+                <br>
+                E-Mail: nordkind-oldenburg@gmx.de<br>
+                Tel: (+49) 441 36155862<br>
+            </p>
+
+            <p class="impressum-paragraph">
+            <h2 class="fs-secondary-heading">
+                Haftung für Inhalte
+            </h2>
+            <br>
+            Alle Inhalte unseres Internetauftritts wurden mit größter Sorgfalt und nach bestem Gewissen erstellt.
+            Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
+            Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen
+            Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet,
+            übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die
+            auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von
+            Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.<br>
+            <br>
+            Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntniserlangung einer konkreten
+            Rechtsverletzung möglich. Bei Bekanntwerden von den o.g. Rechtsverletzungen werden wir diese Inhalte
+            unverzüglich entfernen.<br>
+            <br>
+            <h2 class="fs-secondary-heading">
+                Haftungsbeschränkung für externe Links
+            </h2>
+            <br>
+            Unsere Webseite enthält Links auf externe Webseiten Dritter. Auf die Inhalte dieser direkt oder indirekt
+            verlinkten Webseiten haben wir keinen Einfluss. Daher können wir für die „externen Links“ auch keine
+            Gewähr auf Richtigkeit der Inhalte übernehmen. Für die Inhalte der externen Links sind die jeweiligen
+            Anbieter oder Betreiber (Urheber) der Seiten verantwortlich.<br>
+            <br>
+            Die externen Links wurden zum Zeitpunkt der Linksetzung auf eventuelle Rechtsverstöße überprüft und
+            waren im Zeitpunkt der Linksetzung frei von rechtswidrigen Inhalten. Eine ständige inhaltliche Überprüfung
+            der externen Links ist ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht möglich. Bei direkten oder
+            indirekten Verlinkungen auf die Webseiten Dritter, die außerhalb unseres Verantwortungsbereichs liegen,
+            würde eine Haftungsverpflichtung ausschließlich in dem Fall nur bestehen, wenn wir von den Inhalten
+            Kenntnis erlangen und es uns technisch möglich und zumutbar wäre, die Nutzung im Falle rechtswidriger
+            Inhalte zu verhindern.<br>
+            <br>
+            <h2 class="fs-secondary-heading">
+                Urheberrecht
+            </h2>
+            <br>
+            Die auf unserer Webseite veröffentlichen Inhalte und Werke unterliegen dem deutschen Urheberrecht
+            (http://www.gesetze-im-internet.de/bundesrecht/urhg/gesamt.pdf). Die Vervielfältigung, Bearbeitung,
+            Verbreitung und jede Art der Verwertung des geistigen Eigentums in ideeller und materieller Sicht des
+            Urhebers außerhalb der Grenzen des Urheberrechtes bedürfen der vorherigen schriftlichen Zustimmung des
+            jeweiligen Urhebers i.S.d. Urhebergesetzes(http://www.gesetze-im-internet.de/bundesrecht/urhg/gesamt.pdf).
+            Downloads und Kopien dieser Seite sind nur für den privaten und nicht kommerziellen Gebrauch erlaubt.
+            Sind die Inhalte auf unserer Webseite nicht von uns erstellt wurden, sind die Urheberrechte Dritter zu
+            beachten.<br>
+            Die Inhalte Dritter werden als solche kenntlich gemacht. Sollten Sie trotzdem auf eine
+            Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden
+            von Rechtsverletzungen werden wir derartige Inhalte unverzüglich entfernen.
+        </div>
     </div>
 </footer>
 
