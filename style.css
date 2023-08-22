@@ -2,18 +2,18 @@
     --clr-logo: hsl(45, 96%, 50%);
     --clr-header: hsl(45, 88%, 50%);
     --clr-header-accent: hsl(45, 88%, 90%);
-    --clr-secondary-header: hsl(223, 49%, 27%);
+    --clr-secondary-header: hsl(224, 51%, 10%);
 
-    --clr-primary-400: hsl(226, 53%, 19%);
+    --clr-primary-400: hsl(224, 38%, 11%);
 
     --clr-neutral-900: hsl(0 95% 100%);
-    --clr-neutral-100: hsl(232, 12%, 13%);
+    --clr-neutral-100: hsl(215, 65%, 8%);
 
-    --clr-accent-100: hsl(42, 100%, 58%);
+    --clr-accent-100: hsl(250, 100%, 50%);
 
     --clr-background-header: hsl(0, 95%, 0%);
     --clr-background-primary: hsl(204, 3%, 70%);
-    --clr-background-footer: hsl(0, 0%, 50%);
+    --clr-background-footer: hsl(0, 0%, 50%,70% );
 
     --ff-primary: "Be Vietnam Pro", sans-serif;
 
@@ -159,6 +159,13 @@ p[data-width="small"] {
     max-width: 32ch;
 }
 
+.background-image{
+    background-image: url("assets/Background_rough.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
 /* header */
 
 .header {
@@ -240,6 +247,38 @@ p[data-width="small"] {
 
 .gig-entry a:is(:hover, :focus) {
     color: var(--clr-accent-100);
+}
+
+.table-gigs {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
+    width: 70%;
+}
+
+.table-gigs a {
+    text-decoration: none;
+    color: var(--clr-neutral-100);
+}
+
+.table-gigs a:is(:hover, :focus) {
+    color: var(--clr-accent-100);
+}
+
+.table-gigs th td {
+    text-align: center;
+    padding: 15px;
+}
+
+.table-gigs-right-text {
+    text-align: right;
+    padding-right: 3rem;
+}
+
+.table-gigs-left-text {
+    text-align: left;
+    padding-left: 3rem;
 }
 
 .embedded-videos-max-width {
@@ -417,7 +456,8 @@ p[data-width="small"] {
 
 .horizontal-center-align {
     display: flex;
-    width: fit-content;
+    width: auto;
+    align-content: center;
     margin: 0 auto;
     align-items: center;
     gap: clamp(var(--size-400), 5vw, var(--size-700));
@@ -507,6 +547,10 @@ p[data-width="small"] {
 
 .padding-200 {
     padding: var(--size-200);
+}
+
+.padding-block-1600 {
+    padding-block: var(--size-1600);
 }
 
 .padding-block-900 {
