@@ -4,9 +4,10 @@
     --clr-header-accent: hsl(45, 88%, 90%);
     --clr-secondary-header: hsl(224, 51%, 10%);
 
-    --clr-primary-400: hsl(224, 38%, 11%);
+    --clr-primary-400: hsl(240, 11%, 74%);
 
     --clr-neutral-900: hsl(0 95% 100%);
+    --clr-neutral-400: hsl(0, 0%, 11%);
     --clr-neutral-100: hsl(215, 65%, 8%);
 
     --clr-accent-100: hsl(250, 100%, 50%);
@@ -160,93 +161,31 @@ p[data-width="small"] {
 }
 
 .background-image{
-    background-image: url("assets/Background_rough.jpg");
+    background-image: url("assets/Background_schwarz_weiß.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
 }
 
-/* header */
-
-.header {
-    padding: var(--size-200);
-    height: var(--nav-list-height);
-    background-image: linear-gradient(var(--clr-background-header) 70%, transparent);
+.background-blur{
+    background-color: var(--clr-background-footer);
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
 }
 
-.sticky {
-    position: fixed;
-    z-index: 5;
+.background-row{
+    background-color: var(--clr-background-footer);
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
-    /*transition: all 0.2s ease;*/
-}
-
-.logo {
-    height: 5rem;
-    margin: var(--size-100);
-    width: 100%;
-}
-
-.nav-list-max-width {
-    margin: 0 auto;
-    max-width: 35rem;
-}
-
-.nav-list {
-    display: grid;
-    align-items: center;
-    align-content: center;
-    grid-template-columns: repeat(auto-fit, 6rem);
-    gap: var(--size-200);
-    padding-top: var(--size-400);
-    font-weight: var(--fw-semi-bold);
-}
-
-.nav-list a {
-    text-decoration: none;
-    text-align: center;
-    color: var(--clr-header);
-}
-
-.nav-list a:is(:hover, :focus) {
-    color: var(--clr-header-accent);
 }
 
 /* Content */
 
-.content-nav-link {
-    padding-top: var(--nav-list-height);
-}
-
-.main-content-header {
-    /* is replaced in the script */
-}
-
-.video-background {
-    background-image: linear-gradient(var(--clr-background-header) 95%, transparent);
-    padding-bottom: var(--size-1400);
-}
-
-.video {
-    margin-top: var(--header-size);
-    width: 100%;
-    height: auto;
-}
-
-.gig-entry {
-    display: flex;
-    align-content: center;
-    vertical-align: center;
-    color: var(--clr-neutral-100);
-}
-
-.gig-entry a {
-    text-decoration: none;
-    color: var(--clr-neutral-100);
-}
-
-.gig-entry a:is(:hover, :focus) {
-    color: var(--clr-accent-100);
+.live-font {
+    font-family: "Stencil", sans-serif;
+    font-size: 4rem;
 }
 
 .table-gigs {
@@ -254,7 +193,16 @@ p[data-width="small"] {
     margin-left: auto;
     margin-right: auto;
     table-layout: fixed;
-    width: 70%;
+    width: 100%;
+}
+
+.table-row-background {
+    background-color: var(--clr-background-footer);
+}
+
+.blank_row
+{
+    height: 4rem !important; /* overwrites any other rules */
 }
 
 .table-gigs a {
@@ -281,81 +229,6 @@ p[data-width="small"] {
     padding-left: 3rem;
 }
 
-.embedded-videos-max-width {
-    margin: 0 auto;
-    max-width: 130rem;
-}
-
-.embedded-videos-columns {
-    display: grid;
-    gap: 2rem;
-    align-items: center;
-    align-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(var(--embedded-video-width), 1fr));
-}
-
-.embedded-video {
-    margin: auto;
-    width: min(var(--embedded-video-width), 100% - (var(--sm-padding)));
-    aspect-ratio: 1.7777;
-}
-
-@media (max-width: 39em) {
-    .header {
-        height: var(--nav-list-height-mobile);
-    }
-
-    .content-nav-link {
-        padding-top: var(--nav-list-height-mobile);
-    }
-
-    .video {
-        margin-top: var(--header-size-mobile);
-        transform: translate(-10%, 50%) scale(2.5, 2.5);
-        transform-origin: center;
-        margin-bottom: 60%;
-    }
-
-    .video-background {
-        padding-bottom: var(--size-1600);
-    }
-
-    .embedded-videos-columns {
-        display: block;
-    }
-
-    .embedded-video {
-        padding: 1rem;
-        width: 100%;
-        aspect-ratio: 1.7777;
-    }
-}
-
-.description {
-    --max-description-width: 80rem;
-    text-align: justify;
-    width: min(var(--max-description-width), 100% - (var(--sm-padding) * 2));
-    margin-inline: auto;
-}
-
-.contact-primary {
-    color: var(--clr-neutral-100);
-}
-
-.contact-primary a {
-    text-decoration: none;
-    color: var(--clr-neutral-100);
-}
-
-.contact-primary a:is(:hover, :focus) {
-    color: var(--clr-accent-100);
-}
-
-.footer-background-gradient {
-    background-image: linear-gradient(transparent, var(--clr-background-footer));
-    height: var(--size-800);
-}
-
 .impressum {
     --max-description-width: 80rem;
     text-align: justify;
@@ -367,70 +240,6 @@ p[data-width="small"] {
 
     margin-bottom: var(--size-400);
 }
-
-/* social list */
-
-.social-list {
-    display: flex;
-    gap: var(--size-600);
-}
-
-.social-icon {
-    width: var(--size-600);
-    aspect-ratio: 1;
-    --social-logo-color: var(--clr-neutral-100);
-}
-
-.social-list a:is(:hover, :focus) .social-icon {
-    --social-logo-color: var(--clr-header);
-}
-
-/* cookie consent */
-
-#myCookieConsent {
-    z-index: 999;
-    min-height: 20px;
-    font-family: OpenSans, arial, "sans-serif";
-    padding: 10px 20px;
-    background: rgba(0,0,0,0.6);
-    overflow: hidden;
-    position: fixed;
-    color: #FFF;
-    bottom: 0;
-    right: 0;
-    display: none;
-    left: 0;
-    text-align: center;
-    font-size: 15px;
-    font-weight: bold;
-}
-#myCookieConsent div {
-    padding: 5px 0 0;
-}
-#myCookieConsent a {
-    color: #ffba55;
-    display: inline-block;
-    padding: 0 10px;
-}
-#myCookieConsent a:hover {
-    color: #fda016;
-}
-#myCookieConsent a#cookieButton {
-    display: inline-block;
-    color: #000000;
-    font-size: 1.1em;
-    background: #ffba55;
-    text-decoration: none;
-    cursor: pointer;
-    padding: 2px 20px;
-    float: right;
-    border-radius: 20px;
-}
-#myCookieConsent a#cookieButton:hover {
-    background: #fda016;
-    color: #000;
-}
-
 
 /* Utility classes */
 
@@ -489,6 +298,10 @@ p[data-width="small"] {
 
 .text-neutral-100 {
     color: var(--clr-neutral-100);
+}
+
+.text-neutral-400 {
+    color: var(--clr-neutral-400);
 }
 
 .text-neutral-900 {
